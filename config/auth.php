@@ -1,5 +1,7 @@
 <?php
 
+use phpDocumentor\Reflection\PseudoTypes\True_;
+
 return [
 
     /*
@@ -14,7 +16,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -42,7 +44,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'jwt',
             'provider' => 'users',
             'hash' => false,
         ],

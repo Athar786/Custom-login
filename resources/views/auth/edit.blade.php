@@ -9,11 +9,13 @@
 
                 <div class="card-body">
                 <center>
-    <form id="form" action="{{route('register')}}" method="POST" accept-charset="utf-8">
-        @csrf
+        <form method="POST" action="/edit/{{ $user->id}}" accept-charset="utf-8">
+            {{ csrf_field() }}
+            {{ method_field('PUT') }}
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Enter name" name="name" />
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                 placeholder="Enter name" name="name" value="{{ $user->name }}" />
                 <span class="text-danger">{{ $errors->first('name') }}</span>
             </div>
 
